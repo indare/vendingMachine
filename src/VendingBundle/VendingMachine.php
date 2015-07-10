@@ -15,4 +15,9 @@ class VendingMachine {
     {
         return 'VendingMachine';
     }
+
+    public function receiveMoney($string)
+    {
+        return $string;
+    }
 }
