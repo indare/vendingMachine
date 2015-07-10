@@ -38,7 +38,7 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase
     public function 百円玉を1枚いれる()
     {
         $this->vendingMachine->receiveMoney(100);
-        $this->assertEquals(100, $this->vendingMachine->getStockPrice());
+        $this->assertEquals(100, $this->vendingMachine->showStockPrice());
     }
 
     /**
@@ -47,7 +47,7 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase
     public function 十円玉を1枚いれる()
     {
         $this->vendingMachine->receiveMoney(10);
-        $this->assertEquals(10, $this->vendingMachine->getStockPrice());
+        $this->assertEquals(10, $this->vendingMachine->showStockPrice());
     }
 
     /**
@@ -57,7 +57,7 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase
     {
         $this->vendingMachine->receiveMoney(100);
         $this->vendingMachine->receiveMoney(100);
-        $this->assertEquals(200, $this->vendingMachine->getStockPrice());
+        $this->assertEquals(200, $this->vendingMachine->showStockPrice());
     }
 
     /**
@@ -76,9 +76,9 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase
     public function 入れられないお金は帰ってくる()
     {
         $result = $this->vendingMachine->receiveMoney(2000);
-        $ejectBox = $this->vendingMachine->checkEjectBox();
+        $ejectBox = $this->vendingMachine->ejectBox();
         $this->assertFalse($result);
-        $this->assertEquals(2000, $ejectBox[0]);
+        $this->assertEquals(2000, $ejectBox);
     }
 
     /**
@@ -87,9 +87,9 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase
     public function 入れられるお金は帰ってこない()
     {
         $result = $this->vendingMachine->receiveMoney(1000);
-        $ejectBox = $this->vendingMachine->checkEjectBox();
+        $ejectBox = $this->vendingMachine->ejectBox();
         $this->assertTrue($result);
-        $this->assertEquals(true, is_null($ejectBox));
+        $this->assertEquals(0, $ejectBox);
     }
 
     /**

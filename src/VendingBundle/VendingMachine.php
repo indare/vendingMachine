@@ -13,8 +13,6 @@ class VendingMachine
 {
 
     private $stockPrice;
-
-    /** @var EjectBox */
     private $ejectBox;
 
     /**
@@ -23,7 +21,7 @@ class VendingMachine
     public function __construct()
     {
         $this->stockPrice = 0;
-        $this->ejectBox = new EjectBox();
+        $this->ejectBox = 0;
     }
 
 
@@ -46,15 +44,15 @@ class VendingMachine
     /**
      * @return array
      */
-    public function checkEjectBox()
+    public function ejectBox()
     {
-        return $this->ejectBox->getContain();
+        return $this->ejectBox;
     }
 
     /**
      * @return int
      */
-    public function getStockPrice()
+    public function showStockPrice()
     {
         return $this->stockPrice;
     }
@@ -73,7 +71,7 @@ class VendingMachine
         $moneyValidator = new MoneyValidator();
 
         if (!$moneyValidator->checkMoney($money)) {
-            $this->ejectBox->setContain($money);
+            $this->ejectBox += $money;
 
             return false;
         } else {
