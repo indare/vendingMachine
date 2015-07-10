@@ -57,11 +57,20 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase {
     /**
      * @test
      * @expectedException   \InvalidArgumentException
-     * @expectedExceptionMessage このお金は使えません。
+     * @expectedExceptionMessage これはお金じゃありません。
      */
     public function お金以外は入らない(){
         $this->vendingMachine->receiveMoney('ぷれいすてーしょんふぉー');
     }
+
+    /**
+     * @test
+     */
+    public function 入れられないお金は帰ってくる()
+    {
+
+    }
+
 
     /**
      * @test
@@ -76,6 +85,18 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals($result,$actualResult);
 
     }
+
+    /**
+     * @return array
+     */
+    public function putMoneyLiet()
+    {
+        return [
+            [[1,10,100],[1,10,110]],
+            [[1000,1000,10000],[1000,2000,10000]]
+        ];
+    }
+
 
     /**
      * @return array

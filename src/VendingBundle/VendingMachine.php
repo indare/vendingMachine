@@ -35,8 +35,15 @@ class VendingMachine {
     public function receiveMoney($money)
     {
         if (!is_int($money)){
-            throw new \InvalidArgumentException("このお金は使えません。");
+            throw new \InvalidArgumentException("これはお金じゃありません。");
         }
+
+        $moneyValidator = new MoneyValidator();
+
+        if (!$moneyValidator->checkMoney($money)){
+            return $money;
+        }
+
         $this->stockPrice += $money;
         return $this->stockPrice;
     }
