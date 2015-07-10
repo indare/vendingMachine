@@ -1,14 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: arino
- * Date: 15/07/10
- * Time: 22:24
- */
 
-namespace VendingBundleTest;
+namespace Indare\VendingBundle\Test;
 
-use VendingBundle\MoneyValidator;
+use Indare\VendingBundle\MoneyValidator;
 
 class MoneyValidatorTest extends \PHPUnit_Framework_TestCase
 {

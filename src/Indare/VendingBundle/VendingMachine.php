@@ -6,24 +6,33 @@
  * Time: 10:05
  */
 
-namespace VendingBundle;
+namespace Indare\VendingBundle;
 
 
 class VendingMachine
 {
 
-    private $stockPrice;
+    private $currentAmmount;
     private $ejectBox;
+    /**
+     * @var Stock
+     */
+    private $stock;
 
     /**
      * VendingMachine constructor.
      */
     public function __construct()
     {
-        $this->stockPrice = 0;
+        $this->currentAmmount = 0;
         $this->ejectBox = 0;
+        $this->stock = new Stock();
     }
 
+    public function showStock()
+    {
+        return $this->stock->getStockStatus();
+    }
 
     public function getName()
     {
@@ -35,8 +44,8 @@ class VendingMachine
      */
     public function refund()
     {
-        $result = $this->stockPrice;
-        $this->stockPrice = 0;
+        $result = $this->currentAmmount;
+        $this->currentAmmount = 0;
 
         return $result;
     }
@@ -54,7 +63,7 @@ class VendingMachine
      */
     public function showStockPrice()
     {
-        return $this->stockPrice;
+        return $this->currentAmmount;
     }
 
     /**
@@ -75,7 +84,7 @@ class VendingMachine
 
             return false;
         } else {
-            $this->stockPrice += $money;
+            $this->currentAmmount += $money;
         }
 
         return true;

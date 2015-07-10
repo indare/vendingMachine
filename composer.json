@@ -4,8 +4,7 @@
   },
   "autoload": {
     "psr-0": {
-      "VendingBundle": "src/",
-      "VendingBundleTest": "test/"
+      "Indare": "src/"
     }
   }
 }

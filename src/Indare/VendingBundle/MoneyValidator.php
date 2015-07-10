@@ -1,5 +1,5 @@
 <?php
-namespace VendingBundle;
+namespace Indare\VendingBundle;
 
 class MoneyValidator
 {
