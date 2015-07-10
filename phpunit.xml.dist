@@ -6,7 +6,7 @@
          verbose="true">
     <testsuites>
         <testsuite name="small">
-            <directory suffix="Test.php">src/Indare/VendingBundle/test</directory>
+            <directory suffix="Test.php">test/VendingBundleTest</directory>
         </testsuite>
     </testsuites>
     <php>

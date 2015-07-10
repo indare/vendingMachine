@@ -1,20 +1,20 @@
 <?php
 
-namespace Indare\VendingBundle\Test;
+namespace VendingBundleTest;
 
-use Indare\VendingBundle\Entity\Coke;
-use Indare\VendingBundle\VendingMachine;
+use VendingBundle\Entity\Coke;
+use VendingBundle\Machine;
 
 class VendingMachineTest extends \PHPUnit_Framework_TestCase
 {
 
-    /** @var VendingMachine */
+    /** @var Machine */
     private $vendingMachine;
 
 
     public function setup()
     {
-        $this->vendingMachine = new VendingMachine();
+        $this->vendingMachine = new Machine();
     }
 
     /**
@@ -22,7 +22,7 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase
      */
     public function GetVendingMachine()
     {
-        $vendingMachine = new VendingMachine();
+        $vendingMachine = new Machine();
 
         $this->assertEquals('VendingMachine', $vendingMachine->getName());
     }

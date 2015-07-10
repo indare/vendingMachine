@@ -1,7 +1,7 @@
 <?php
-namespace Indare\VendingBundle\Test;
+namespace VendingBundleTest\Entity;
 
-use Indare\VendingBundle\Entity\Coke;
+use VendingBundle\Entity\Coke;
 
 class CokeTest extends \PHPUnit_Framework_TestCase
 {

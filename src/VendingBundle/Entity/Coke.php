@@ -1,6 +1,5 @@
 <?php
-
-namespace Indare\VendingBundle\Entity;
+namespace VendingBundle\Entity;
 
 class Coke
 {

@@ -1,14 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: arino
- * Date: 15/07/11
- * Time: 0:01
- */
+namespace VendingBundleTest;
 
-namespace Indare\VendingBundle\Test;
-
-use Indare\VendingBundle\MoneyBox;
+use VendingBundle\MoneyBox;
 
 class MoneyBoxTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Indare\VendingBundle\Test;
+namespace VendingBundleTest;
 
-use Indare\VendingBundle\MoneyValidator;
+use VendingBundle\MoneyValidator;
 
 class MoneyValidatorTest extends \PHPUnit_Framework_TestCase
 {

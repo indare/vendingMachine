@@ -6,10 +6,9 @@
  * Time: 22:57
  */
 
-namespace Indare\VendingBundle;
+namespace VendingBundle;
 
-
-use Indare\VendingBundle\Entity\Coke;
+use VendingBundle\Entity\Coke;
 
 class Stock
 {

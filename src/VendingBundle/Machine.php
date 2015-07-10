@@ -1,15 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: arino
- * Date: 15/07/10
- * Time: 10:05
- */
-
-namespace Indare\VendingBundle;
+namespace VendingBundle;
 
 
-class VendingMachine
+class Machine
 {
 
     /** @var MoneyBox */
