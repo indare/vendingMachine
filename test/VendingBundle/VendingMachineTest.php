@@ -11,6 +11,14 @@ use VendingBundle\VendingMachine;
 
 class VendingMachineTest extends \PHPUnit_Framework_TestCase {
 
+    /** @var VendingMachine */
+    private $vendingMachine;
+
+
+    public function setup(){
+        $this->vendingMachine = new VendingMachine();
+    }
+
     /**
      * @test
      */
@@ -18,6 +26,13 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase {
         $vendingMachine = new VendingMachine();
 
         $this->assertEquals('VendingMachine',$vendingMachine->getName());
+    }
+
+    /**
+     * @test
+     */
+    public function お金入れる(){
+
     }
 
 
