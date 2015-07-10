@@ -52,4 +52,13 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase {
         $display = $this->vendingMachine->receiveMoney(100);
         $this->assertEquals(200,$display);
     }
+
+    /**
+     * @test
+     * @expectedException   \InvalidArgumentException
+     * @expectedExceptionMessage このお金は使えません。
+     */
+    public function お金以外は入らない(){
+        $this->vendingMachine->receiveMoney('ぷれいすてーしょんふぉー');
+    }
 }
