@@ -68,7 +68,19 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase {
      */
     public function 入れられないお金は帰ってくる()
     {
+        $this->vendingMachine->receiveMoney(2000);
+        $ejectBox = $this->vendingMachine->checkEjectBox();
+        $this->assertEquals(2000,$ejectBox[0]);
+    }
 
+    /**
+     * @test
+     */
+    public function 入れられるお金は帰ってこない()
+    {
+        $this->vendingMachine->receiveMoney(1000);
+        $ejectBox = $this->vendingMachine->checkEjectBox();
+        $this->assertEquals(true,is_null($ejectBox));
     }
 
 
