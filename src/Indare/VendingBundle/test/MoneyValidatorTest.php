@@ -10,14 +10,14 @@ class MoneyValidatorTest extends \PHPUnit_Framework_TestCase
     /**
      * @var MoneyValidator
      */
-    private $moneyVaidator;
+    private $moneyValidator;
 
     /**
      * @setup
      */
     public function setup()
     {
-        $this->moneyVaidator = new MoneyValidator();
+        $this->moneyValidator = new MoneyValidator();
     }
 
     /**
