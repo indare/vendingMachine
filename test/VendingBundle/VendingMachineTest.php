@@ -31,25 +31,25 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase {
     /**
      * @test
      */
-    public function お金を120円入れる(){
-        $display = $this->vendingMachine->receiveMoney('120円');
-        $this->assertEquals('120円',$display);
+    public function 百円玉を1枚いれる(){
+        $display = $this->vendingMachine->receiveMoney(100);
+        $this->assertEquals(100, $display);
     }
 
     /**
      * @test
      */
-    public function お金を200円入れる(){
-        $display = $this->vendingMachine->receiveMoney('200円');
-        $this->assertEquals('200円',$display);
+    public function 十円玉を1枚いれる(){
+        $display = $this->vendingMachine->receiveMoney(10);
+        $this->assertEquals(10,$display);
     }
 
     /**
      * @test
      */
     public function 百円玉を2枚入れる(){
-        $display = $this->vendingMachine->receiveMoney('100円');
-        $display = $this->vendingMachine->receiveMoney('100円');
-        $this->assertEquals('200円',$display);
+        $display = $this->vendingMachine->receiveMoney(100);
+        $display = $this->vendingMachine->receiveMoney(100);
+        $this->assertEquals(200,$display);
     }
 }
