@@ -7,50 +7,57 @@
  */
 
 namespace VendingBundleTest;
+
 use VendingBundle\VendingMachine;
 
-class VendingMachineTest extends \PHPUnit_Framework_TestCase {
+class VendingMachineTest extends \PHPUnit_Framework_TestCase
+{
 
     /** @var VendingMachine */
     private $vendingMachine;
 
 
-    public function setup(){
+    public function setup()
+    {
         $this->vendingMachine = new VendingMachine();
     }
 
     /**
      * @test
      */
-    public function GetVendingMachine(){
+    public function GetVendingMachine()
+    {
         $vendingMachine = new VendingMachine();
 
-        $this->assertEquals('VendingMachine',$vendingMachine->getName());
+        $this->assertEquals('VendingMachine', $vendingMachine->getName());
     }
 
     /**
      * @test
      */
-    public function 百円玉を1枚いれる(){
-        $display = $this->vendingMachine->receiveMoney(100);
-        $this->assertEquals(100, $display);
+    public function 百円玉を1枚いれる()
+    {
+        $this->vendingMachine->receiveMoney(100);
+        $this->assertEquals(100, $this->vendingMachine->getStockPrice());
     }
 
     /**
      * @test
      */
-    public function 十円玉を1枚いれる(){
-        $display = $this->vendingMachine->receiveMoney(10);
-        $this->assertEquals(10,$display);
+    public function 十円玉を1枚いれる()
+    {
+        $this->vendingMachine->receiveMoney(10);
+        $this->assertEquals(10, $this->vendingMachine->getStockPrice());
     }
 
     /**
      * @test
      */
-    public function 百円玉を2枚入れる(){
-        $display = $this->vendingMachine->receiveMoney(100);
-        $display = $this->vendingMachine->receiveMoney(100);
-        $this->assertEquals(200,$display);
+    public function 百円玉を2枚入れる()
+    {
+        $this->vendingMachine->receiveMoney(100);
+        $this->vendingMachine->receiveMoney(100);
+        $this->assertEquals(200, $this->vendingMachine->getStockPrice());
     }
 
     /**
@@ -58,7 +65,8 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase {
      * @expectedException   \InvalidArgumentException
      * @expectedExceptionMessage これはお金じゃありません。
      */
-    public function お金以外は入らない(){
+    public function お金以外は入らない()
+    {
         $this->vendingMachine->receiveMoney('ぷれいすてーしょんふぉー');
     }
 
@@ -67,9 +75,10 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase {
      */
     public function 入れられないお金は帰ってくる()
     {
-        $this->vendingMachine->receiveMoney(2000);
+        $result = $this->vendingMachine->receiveMoney(2000);
         $ejectBox = $this->vendingMachine->checkEjectBox();
-        $this->assertEquals(2000,$ejectBox[0]);
+        $this->assertFalse($result);
+        $this->assertEquals(2000, $ejectBox[0]);
     }
 
     /**
@@ -77,9 +86,26 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase {
      */
     public function 入れられるお金は帰ってこない()
     {
-        $this->vendingMachine->receiveMoney(1000);
+        $result = $this->vendingMachine->receiveMoney(1000);
         $ejectBox = $this->vendingMachine->checkEjectBox();
-        $this->assertEquals(true,is_null($ejectBox));
+        $this->assertTrue($result);
+        $this->assertEquals(true, is_null($ejectBox));
+    }
+
+    /**
+     * @test
+     */
+    public function 入れたお金はかえってくるヤッター()
+    {
+
+        $this->vendingMachine->receiveMoney(100);
+        $this->vendingMachine->receiveMoney(100);
+        $this->vendingMachine->receiveMoney(10);
+        $this->vendingMachine->receiveMoney(1000);
+        $refund = $this->vendingMachine->refund();
+
+        $this->assertEquals(1210, $refund);
+
     }
 
 }

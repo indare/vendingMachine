@@ -1,11 +1,13 @@
 <?php
 namespace VendingBundle;
 
-class MoneyValidator{
+class MoneyValidator
+{
 
-    const ACCEPTABLE_MONEY = [10,50,100,500,1000];
+    const ACCEPTABLE_MONEY = [10, 50, 100, 500, 1000];
 
-    public function checkMoney($money){
+    public function checkMoney($money)
+    {
         return in_array($money, self::ACCEPTABLE_MONEY);
     }
 

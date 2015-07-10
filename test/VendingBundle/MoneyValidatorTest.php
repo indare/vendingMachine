@@ -32,11 +32,11 @@ class MoneyValidatorTest extends \PHPUnit_Framework_TestCase
      * @param $actualMoney
      * @param $actualResult
      */
-    public function 投入可能なお金判定のテスト($actualMoney,$actualResult)
+    public function 投入可能なお金判定のテスト($actualMoney, $actualResult)
     {
         $moneyVaildator = new MoneyValidator();
         $result = $moneyVaildator->checkMoney($actualMoney);
-        $this->assertEquals($result,$actualResult);
+        $this->assertEquals($result, $actualResult);
 
     }
 
@@ -46,7 +46,7 @@ class MoneyValidatorTest extends \PHPUnit_Framework_TestCase
     public function actualMoneyList()
     {
         return [
-            [1,false],
+            [1, false],
             [5, false],
             [10, true],
             [50, true],

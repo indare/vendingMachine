@@ -40,19 +40,17 @@ class EjectBox
      */
     public function takeOutContain($index)
     {
-        if (sizeof($this->contain) == 0)
-        {
+        if (sizeof($this->contain) == 0) {
             return null;
         }
 
         try {
             $return = $this->contain[$index];
-        }catch(\OutOfRangeException $e)
-        {
+        } catch (\OutOfRangeException $e) {
             throw new \OutOfRangeException("知らないお金は返せません。", $e->getCode());
         }
 
-        array_splice($this->contain,$index);
+        array_splice($this->contain, $index);
 
         return $return;
     }

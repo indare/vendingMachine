@@ -9,7 +9,8 @@
 namespace VendingBundle;
 
 
-class VendingMachine {
+class VendingMachine
+{
 
     private $stockPrice;
 
@@ -31,6 +32,13 @@ class VendingMachine {
         return 'VendingMachine';
     }
 
+    public function refund()
+    {
+        $result = $this->stockPrice;
+        $this->stockPrice = 0;
+
+        return $result;
+    }
 
     /**
      * @return array
@@ -40,24 +48,31 @@ class VendingMachine {
         return $this->ejectBox->getContain();
     }
 
+    public function getStockPrice()
+    {
+        return $this->stockPrice;
+    }
+
     /**
      * @param int $money
-     * @return int
+     * @return bool
      */
     public function receiveMoney($money)
     {
-        if (!is_int($money)){
+        if (!is_int($money)) {
             throw new \InvalidArgumentException("これはお金じゃありません。");
         }
 
         $moneyValidator = new MoneyValidator();
 
-        if (!$moneyValidator->checkMoney($money)){
+        if (!$moneyValidator->checkMoney($money)) {
             $this->ejectBox->setContain($money);
-        }else{
+
+            return false;
+        } else {
             $this->stockPrice += $money;
         }
 
-        return $this->stockPrice;
+        return true;
     }
 }
