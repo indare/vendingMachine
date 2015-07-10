@@ -12,7 +12,8 @@ namespace Indare\VendingBundle;
 class VendingMachine
 {
 
-    private $currentAmount;
+    /** @var MoneyBox */
+    private $moneyBox;
     private $ejectBox;
     /**
      * @var Stock
@@ -24,7 +25,7 @@ class VendingMachine
      */
     public function __construct()
     {
-        $this->currentAmount = 0;
+        $this->moneyBox = new MoneyBox();
         $this->ejectBox = 0;
         $this->stock = new Stock();
     }
@@ -44,10 +45,7 @@ class VendingMachine
      */
     public function refund()
     {
-        $result = $this->currentAmount;
-        $this->currentAmount = 0;
-
-        return $result;
+        return $this->moneyBox->refundMoney();
     }
 
     /**
@@ -63,7 +61,7 @@ class VendingMachine
      */
     public function currentAmount()
     {
-        return $this->currentAmount;
+        return $this->moneyBox->showAmount();
     }
 
     /**
@@ -84,7 +82,7 @@ class VendingMachine
 
             return false;
         } else {
-            $this->currentAmount += $money;
+            $this->moneyBox->addMoney($money);
         }
 
         return true;
