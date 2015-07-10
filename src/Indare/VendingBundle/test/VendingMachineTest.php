@@ -2,6 +2,7 @@
 
 namespace Indare\VendingBundle\Test;
 
+use Indare\VendingBundle\Entity\Coke;
 use Indare\VendingBundle\VendingMachine;
 
 class VendingMachineTest extends \PHPUnit_Framework_TestCase
@@ -32,7 +33,7 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase
     public function 百円玉を1枚いれる()
     {
         $this->vendingMachine->receiveMoney(100);
-        $this->assertEquals(100, $this->vendingMachine->showStockPrice());
+        $this->assertEquals(100, $this->vendingMachine->currentAmount());
     }
 
     /**
@@ -41,7 +42,7 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase
     public function 十円玉を1枚いれる()
     {
         $this->vendingMachine->receiveMoney(10);
-        $this->assertEquals(10, $this->vendingMachine->showStockPrice());
+        $this->assertEquals(10, $this->vendingMachine->currentAmount());
     }
 
     /**
@@ -51,7 +52,7 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase
     {
         $this->vendingMachine->receiveMoney(100);
         $this->vendingMachine->receiveMoney(100);
-        $this->assertEquals(200, $this->vendingMachine->showStockPrice());
+        $this->assertEquals(200, $this->vendingMachine->currentAmount());
     }
 
     /**
@@ -99,6 +100,19 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase
         $refund = $this->vendingMachine->refund();
 
         $this->assertEquals(1210, $refund);
+
+    }
+
+    /**
+     * @test
+     */
+    public function 今の在庫はコーラが５本()
+    {
+        /** @var Coke $stock */
+        $stock = $this->vendingMachine->showStock()[0];
+        $this->assertEquals(120,$stock->getPrice());
+        $this->assertEquals(5,$stock->getCount());
+        $this->assertEquals('コーラ',$stock->getName());
 
     }
 
