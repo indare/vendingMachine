@@ -4,8 +4,8 @@
   },
   "autoload": {
     "psr-0": {
-      "VendingBundle": "src/VendingBundle/",
-      "VendingBundleTest": "test/VendingBundle/"
+      "VendingBundle": "src/",
+      "VendingBundleTest": "test/"
     }
   }
 }

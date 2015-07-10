@@ -6,7 +6,10 @@
          verbose="true">
     <testsuites>
         <testsuite name="small">
-            <directory suffix="Test.php">src</directory>
+            <directory suffix="Test.php">test</directory>
         </testsuite>
     </testsuites>
+    <php>
+        <const name="PHPUNIT_TESTSUITE" value="true"/>
+    </php>
 </phpunit>
