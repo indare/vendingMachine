@@ -32,6 +32,9 @@ class VendingMachine
         return 'VendingMachine';
     }
 
+    /**
+     * @return int
+     */
     public function refund()
     {
         $result = $this->stockPrice;
@@ -48,6 +51,9 @@ class VendingMachine
         return $this->ejectBox->getContain();
     }
 
+    /**
+     * @return int
+     */
     public function getStockPrice()
     {
         return $this->stockPrice;
@@ -56,6 +62,7 @@ class VendingMachine
     /**
      * @param int $money
      * @return bool
+     * @throws \InvalidArgumentException
      */
     public function receiveMoney($money)
     {
