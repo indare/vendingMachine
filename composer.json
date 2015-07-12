@@ -5,7 +5,8 @@
   "autoload": {
     "psr-0": {
       "VendingBundle": "src/",
-      "VendingBundleTest": "test/"
+      "VendingBundleTest": "test/",
+      "AcceptanceBundle": "test/"
     }
   }
 }

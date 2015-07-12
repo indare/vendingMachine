@@ -23,6 +23,9 @@ class Machine
         $this->stock = new Stock();
     }
 
+    /**
+     * @return array
+     */
     public function showStock()
     {
         return $this->stock->getStockStatus();
@@ -52,14 +55,14 @@ class Machine
     /**
      * @return int
      */
-    public function currentAmount()
+    public function showAmount()
     {
         return $this->moneyBox->showAmount();
     }
 
     /**
      * @param int $money
-     * @return bool
+     * @return int
      * @throws \InvalidArgumentException
      */
     public function receiveMoney($money)
@@ -71,13 +74,11 @@ class Machine
         $moneyValidator = new MoneyValidator();
 
         if (!$moneyValidator->checkMoney($money)) {
-            $this->ejectBox += $money;
-
-            return false;
+            return $money;
         } else {
             $this->moneyBox->addMoney($money);
         }
 
-        return true;
+        return 0;
     }
 }

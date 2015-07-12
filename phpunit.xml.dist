@@ -5,8 +5,11 @@
          backupGlobals="false"
          verbose="true">
     <testsuites>
-        <testsuite name="small">
+        <testsuite name="UnitTest">
             <directory suffix="Test.php">test/VendingBundleTest</directory>
+        </testsuite>
+        <testsuite name="Acceptance">
+            <directory suffix="Test.php">test/AcceptanceBundle</directory>
         </testsuite>
     </testsuites>
     <php>
