@@ -27,11 +27,6 @@ class Machine
         return $this->stock->getStockStatus();
     }
 
-    public function getName()
-    {
-        return 'VendingMachine';
-    }
-
     /**
      * @return int
      */

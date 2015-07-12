@@ -20,16 +20,6 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function GetVendingMachine()
-    {
-        $vendingMachine = new Machine();
-
-        $this->assertEquals('VendingMachine', $vendingMachine->getName());
-    }
-
-    /**
-     * @test
-     */
     public function 百円玉を1枚いれる()
     {
         $this->vendingMachine->receiveMoney(100);
@@ -106,9 +96,9 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase
     {
         /** @var Coke $stock */
         $stock = $this->vendingMachine->showStock()[0];
-        $this->assertEquals(120,$stock->getPrice());
-        $this->assertEquals(5,$stock->getCount());
-        $this->assertEquals('コーラ',$stock->getName());
+        $this->assertEquals(120, $stock->getPrice());
+        $this->assertEquals(5, $stock->getCount());
+        $this->assertEquals('コーラ', $stock->getName());
 
     }
 
