@@ -7,10 +7,7 @@ class Machine
 
     /** @var MoneyBox */
     private $moneyBox;
-    private $ejectBox;
-    /**
-     * @var Stock
-     */
+    /** @var Stock */
     private $stock;
 
     /**
@@ -19,7 +16,6 @@ class Machine
     public function __construct()
     {
         $this->moneyBox = new MoneyBox();
-        $this->ejectBox = 0;
         $this->stock = new Stock();
     }
 
@@ -42,14 +38,6 @@ class Machine
     public function refund()
     {
         return $this->moneyBox->refundMoney();
-    }
-
-    /**
-     * @return array
-     */
-    public function ejectBox()
-    {
-        return $this->ejectBox;
     }
 
     /**
