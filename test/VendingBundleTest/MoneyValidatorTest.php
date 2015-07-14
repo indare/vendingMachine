@@ -40,6 +40,8 @@ class MoneyValidatorTest extends \PHPUnit_Framework_TestCase
     public function actualMoneyList()
     {
         return [
+            [-1, false],
+            [0, false],
             [1, false],
             [5, false],
             [10, true],
