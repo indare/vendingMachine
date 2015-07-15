@@ -7,7 +7,8 @@
     "psr-0": {
       "VendingBundle": "src/",
       "VendingBundleTest": "test/",
-      "BehaviorBundle": "test/"
+      "BehaviorBundle": "test/",
+      "AcceptanceBundle": "test/"
     }
   }
 }

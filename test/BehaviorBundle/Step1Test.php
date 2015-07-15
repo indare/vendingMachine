@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: arino
- * Date: 15/07/12
- * Time: 17:55
- */
-
 namespace AcceptanceBundle;
 
 use VendingBundle\Machine;
