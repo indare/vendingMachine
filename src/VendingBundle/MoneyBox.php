@@ -31,6 +31,7 @@ class MoneyBox
     {
         $result = $this->amount;
         $this->amount = 0;
+
         return $result;
 
     }

@@ -29,7 +29,7 @@ class ScenarioTest extends \PHPUnit_Framework_TestCase
     {
 
         //前提:カスタマーは1251円持っている
-        $customerMoney = [1000,100,100,50,1];
+        $customerMoney = [1000, 100, 100, 50, 1];
 
         //自販機に売っているものを確認する
         //@TODO 今は１個しかない & 実装が漏れてるのでキモい
@@ -42,7 +42,7 @@ class ScenarioTest extends \PHPUnit_Framework_TestCase
         //ユーザーはジュースが何個変えるかは知る必要がない。
 
         //コーラが飲みたいので有り金突っ込んでみる
-        foreach($customerMoney as $money){
+        foreach ($customerMoney as $money) {
             $this->machine->receiveMoney($money);
         }
 
