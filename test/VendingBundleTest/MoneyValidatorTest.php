@@ -28,8 +28,8 @@ class MoneyValidatorTest extends \PHPUnit_Framework_TestCase
      */
     public function 投入可能なお金判定のテスト($actualMoney, $actualResult)
     {
-        $moneyVaildator = new MoneyValidator();
-        $result = $moneyVaildator->checkMoney($actualMoney);
+        $moneyValidator = new MoneyValidator();
+        $result = $moneyValidator->checkMoney($actualMoney);
         $this->assertEquals($result, $actualResult);
 
     }
