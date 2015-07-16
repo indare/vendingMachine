@@ -4,7 +4,6 @@ namespace VendingBundle;
 
 use Pimple\Container;
 use VendingBundle\Money\Box\BoxInterface;
-use VendingBundle\Money\Validator\Validator;
 use VendingBundle\Money\Validator\ValidatorInterface;
 
 class Machine
@@ -63,9 +62,7 @@ class Machine
             throw new \InvalidArgumentException("これはお金じゃありません。");
         }
 
-        $moneyValidator = new Validator();
-
-        if (!$moneyValidator->checkMoney($money)) {
+        if (!$this->validator->checkMoney($money)) {
             return $money;
         } else {
             $this->moneyBox->addMoney($money);

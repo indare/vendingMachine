@@ -9,12 +9,13 @@ class Coke implements BeverageInterface
 
     /**
      * Beverage constructor.
+     * @param int $count
      */
-    public function __construct()
+    public function __construct($count = 0)
     {
         $this->name = "コーラ";
         $this->price = "120";
-        $this->count = 5;
+        $this->count = $count;
     }
 
     /**

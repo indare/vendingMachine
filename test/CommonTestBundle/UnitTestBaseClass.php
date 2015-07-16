@@ -17,8 +17,10 @@ class UnitTestBaseClass extends \PHPUnit_Framework_TestCase
     protected function setup()
     {
         $this->container = new Container();
+        $this->container['beverage.coke.count'] = 5;
         $this->container['class.box'] = function(){return new Box();};
         $this->container['class.validator'] = function(){return new Validator();};
-        $this->container['class.stock'] = function(){return new Stock([new Coke()]);};
+        $this->container['class.beverage.coke'] = function($c) {return new Coke($c['beverage.coke.count']);};
+        $this->container['class.stock'] = function($c){return new Stock([$c['class.beverage.coke']]);};
     }
 }

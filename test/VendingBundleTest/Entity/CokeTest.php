@@ -2,10 +2,11 @@
 
 namespace CommonTestBundle\Entity;
 
+use CommonTestBundle\UnitTestBaseClass;
 use VendingBundle\Entity\BeverageInterface;
 use VendingBundle\Entity\Coke;
 
-class CokeTest extends \PHPUnit_Framework_TestCase
+class CokeTest extends UnitTestBaseClass
 {
 
     /** @var BeverageInterface */
@@ -16,7 +17,8 @@ class CokeTest extends \PHPUnit_Framework_TestCase
      */
     public function setup()
     {
-        $this->coke = new Coke();
+        parent::setup();
+        $this->coke = $this->container['class.beverage.coke'];
     }
 
     /**
