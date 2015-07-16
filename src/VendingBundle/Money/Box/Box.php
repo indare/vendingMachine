@@ -1,8 +1,8 @@
 <?php
 
-namespace VendingBundle;
+namespace VendingBundle\Money\Box;
 
-class MoneyBox
+class Box implements BoxInterface
 {
     /**
      * @var int
@@ -10,7 +10,7 @@ class MoneyBox
     private $amount;
 
     /**
-     * @param int $money
+     * @inheritdoc
      */
     public function addMoney($money)
     {
@@ -18,7 +18,7 @@ class MoneyBox
     }
 
     /**
-     * @return int
+     * @inheritdoc
      */
     public function showAmount()
     {
@@ -26,7 +26,7 @@ class MoneyBox
     }
 
     /**
-     * @return int
+     * @inheritdoc
      */
     public function refundMoney()
     {

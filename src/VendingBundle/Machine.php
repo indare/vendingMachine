@@ -2,20 +2,24 @@
 namespace VendingBundle;
 
 
+use VendingBundle\Money\Box\BoxInterface;
+use VendingBundle\Money\Validator\Validator;
+
 class Machine
 {
 
-    /** @var MoneyBox */
+    /** @var BoxInterface */
     private $moneyBox;
     /** @var Stock */
     private $stock;
 
     /**
      * VendingMachine constructor.
+     * @param BoxInterface $boxInterface
      */
-    public function __construct()
+    public function __construct(BoxInterface $boxInterface)
     {
-        $this->moneyBox = new MoneyBox();
+        $this->moneyBox = $boxInterface;
         $this->stock = new Stock();
     }
 
@@ -54,7 +58,7 @@ class Machine
             throw new \InvalidArgumentException("これはお金じゃありません。");
         }
 
-        $moneyValidator = new MoneyValidator();
+        $moneyValidator = new Validator();
 
         if (!$moneyValidator->checkMoney($money)) {
             return $money;

@@ -4,6 +4,7 @@ namespace AcceptanceBundle;
 
 use VendingBundle\Entity\Coke;
 use VendingBundle\Machine;
+use VendingBundle\Money\Box\Box;
 
 class Step2Test extends \PHPUnit_Framework_TestCase
 {
@@ -13,7 +14,8 @@ class Step2Test extends \PHPUnit_Framework_TestCase
     /** @setup */
     public function setup()
     {
-        $this->machine = new Machine();
+        $box = new Box();
+        $this->machine = new Machine($box);
     }
 
     /** @test */

@@ -1,15 +1,14 @@
 <?php
 
-namespace VendingBundle;
+namespace VendingBundle\Money\Validator;
 
-class MoneyValidator
+class Validator implements ValidatorInterface
 {
 
     const ACCEPTABLE_MONEY = [10, 50, 100, 500, 1000];
 
     /**
-     * @param int $money
-     * @return bool
+     * @inheritdoc
      */
     public function checkMoney($money)
     {

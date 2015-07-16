@@ -2,13 +2,14 @@
 
 namespace VendingBundleTest;
 
-use VendingBundle\MoneyValidator;
+use VendingBundle\Money\Validator\Validator;
+use VendingBundle\Money\Validator\ValidatorInterface;
 
 class MoneyValidatorTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
-     * @var MoneyValidator
+     * @var ValidatorInterface
      */
     private $moneyValidator;
 
@@ -17,7 +18,7 @@ class MoneyValidatorTest extends \PHPUnit_Framework_TestCase
      */
     public function setup()
     {
-        $this->moneyValidator = new MoneyValidator();
+        $this->moneyValidator = new Validator();
     }
 
     /**
@@ -28,7 +29,7 @@ class MoneyValidatorTest extends \PHPUnit_Framework_TestCase
      */
     public function 投入可能なお金判定のテスト($actualMoney, $actualResult)
     {
-        $moneyValidator = new MoneyValidator();
+        $moneyValidator = new Validator();
         $result = $moneyValidator->checkMoney($actualMoney);
         $this->assertEquals($result, $actualResult);
 

@@ -4,6 +4,7 @@ namespace VendingBundleTest;
 
 use VendingBundle\Entity\BeverageInterface;
 use VendingBundle\Machine;
+use VendingBundle\Money\Box\Box;
 
 class VendingMachineTest extends \PHPUnit_Framework_TestCase
 {
@@ -13,7 +14,9 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase
 
     public function setup()
     {
-        $this->vendingMachine = new Machine();
+        $box = new Box();
+
+        $this->vendingMachine = new Machine($box);
     }
 
     /**
