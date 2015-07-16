@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: arino
- * Date: 15/07/16
- * Time: 14:21
- */
+
 namespace VendingBundle\Money\Box;
 
 interface BoxInterface

@@ -1,6 +1,6 @@
 <?php
-namespace VendingBundle\Entity;
 
+namespace VendingBundle\Entity;
 
 Interface BeverageInterface
 {

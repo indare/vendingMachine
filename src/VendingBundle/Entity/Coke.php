@@ -1,4 +1,5 @@
 <?php
+
 namespace VendingBundle\Entity;
 
 class Coke implements BeverageInterface
