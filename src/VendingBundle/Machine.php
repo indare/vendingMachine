@@ -2,8 +2,10 @@
 namespace VendingBundle;
 
 
+use Pimple\Container;
 use VendingBundle\Money\Box\BoxInterface;
 use VendingBundle\Money\Validator\Validator;
+use VendingBundle\Money\Validator\ValidatorInterface;
 
 class Machine
 {
@@ -12,15 +14,18 @@ class Machine
     private $moneyBox;
     /** @var Stock */
     private $stock;
+    /** @var ValidatorInterface */
+    private $validator;
 
     /**
      * VendingMachine constructor.
-     * @param BoxInterface $boxInterface
+     * @param Container $container
      */
-    public function __construct(BoxInterface $boxInterface)
+    public function __construct(Container $container)
     {
-        $this->moneyBox = $boxInterface;
-        $this->stock = new Stock();
+        $this->moneyBox = $container['moneyBox'];
+        $this->validator = $container['validator'];
+        $this->stock = $container['stock'];
     }
 
     /**

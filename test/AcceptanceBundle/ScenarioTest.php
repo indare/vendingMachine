@@ -4,9 +4,9 @@ namespace AcceptanceBundle;
 
 use VendingBundle\Entity\BeverageInterface;
 use VendingBundle\Machine;
-use VendingBundle\Money\Box\Box;
+use CommonTestBundle\UnitTestBaseClass;
 
-class ScenarioTest extends \PHPUnit_Framework_TestCase
+class ScenarioTest extends UnitTestBaseClass
 {
 
     /** @var Machine */
@@ -15,8 +15,8 @@ class ScenarioTest extends \PHPUnit_Framework_TestCase
     /** @setup */
     public function setup()
     {
-        $box = new Box();
-        $this->machine = new Machine($box);
+        parent::setup();
+        $this->machine = new Machine($this->container);
     }
 
     /** @test */

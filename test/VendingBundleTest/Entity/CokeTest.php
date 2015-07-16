@@ -1,6 +1,6 @@
 <?php
 
-namespace VendingBundleTest\Entity;
+namespace CommonTestBundle\Entity;
 
 use VendingBundle\Entity\BeverageInterface;
 use VendingBundle\Entity\Coke;

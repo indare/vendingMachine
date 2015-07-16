@@ -3,9 +3,9 @@
 namespace AcceptanceBundle;
 
 use VendingBundle\Machine;
-use VendingBundle\Money\Box\Box;
+use CommonTestBundle\UnitTestBaseClass;
 
-class Step0Test extends \PHPUnit_Framework_TestCase
+class Step0Test extends UnitTestBaseClass
 {
     /** @var Machine */
     private $machine;
@@ -13,8 +13,8 @@ class Step0Test extends \PHPUnit_Framework_TestCase
     /** @setup */
     public function setup()
     {
-        $box = new Box();
-        $this->machine = new Machine($box);
+        parent::setup();
+        $this->machine = new Machine($this->container);
     }
 
     /**

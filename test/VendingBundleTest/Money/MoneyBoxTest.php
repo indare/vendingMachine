@@ -1,6 +1,6 @@
 <?php
 
-namespace VendingBundleTest;
+namespace CommonTestBundle;
 
 use VendingBundle\Money\Box\Box;
 use VendingBundle\Money\Box\BoxInterface;

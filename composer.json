@@ -10,7 +10,8 @@
       "VendingBundle": "src/",
       "VendingBundleTest": "test/",
       "BehaviorBundle": "test/",
-      "AcceptanceBundle": "test/"
+      "AcceptanceBundle": "test/",
+      "CommonTestBundle": "test/"
     }
   }
 }

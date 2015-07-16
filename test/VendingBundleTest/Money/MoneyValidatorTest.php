@@ -1,6 +1,6 @@
 <?php
 
-namespace VendingBundleTest;
+namespace CommonTestBundle;
 
 use VendingBundle\Money\Validator\Validator;
 use VendingBundle\Money\Validator\ValidatorInterface;
