@@ -1,4 +1,5 @@
 <?php
+
 namespace VendingBundleTest;
 
 use VendingBundle\MoneyBox;

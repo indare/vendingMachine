@@ -11,7 +11,6 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase
     /** @var Machine */
     private $vendingMachine;
 
-
     public function setup()
     {
         $this->vendingMachine = new Machine();

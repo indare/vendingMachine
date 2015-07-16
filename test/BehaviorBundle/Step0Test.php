@@ -1,4 +1,5 @@
 <?php
+
 namespace AcceptanceBundle;
 
 use VendingBundle\Machine;

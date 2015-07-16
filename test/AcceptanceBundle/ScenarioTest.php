@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: arino
- * Date: 15/07/15
- * Time: 17:34
- */
 
 namespace AcceptanceBundle;
-
 
 use VendingBundle\Entity\BeverageInterface;
 use VendingBundle\Machine;
