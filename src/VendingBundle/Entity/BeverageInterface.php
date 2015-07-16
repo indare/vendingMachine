@@ -4,13 +4,25 @@ namespace VendingBundle\Entity;
 
 Interface BeverageInterface
 {
-    /** @return string */
+    /**
+     * エンティティの名称を返す
+     *
+     * @return string
+     */
     public function getName();
 
-    /** @return int */
+    /**
+     * エンティティが保持する数量を返す
+     *
+     * @return int
+     */
     public function getCount();
 
-    /** @return int */
+    /**
+     * エンティティが保持する価格を返す
+     *
+     * @return int
+     */
     public function getPrice();
 
 }

@@ -18,7 +18,7 @@ class Coke implements BeverageInterface
     }
 
     /**
-     * @return mixed
+     * @inheritdoc
      */
     public function getPrice()
     {
@@ -26,7 +26,7 @@ class Coke implements BeverageInterface
     }
 
     /**
-     * @return mixed
+     * @inheritdoc
      */
     public function getName()
     {
@@ -34,7 +34,7 @@ class Coke implements BeverageInterface
     }
 
     /**
-     * @return int
+     * @inheritdoc
      */
     public function getCount()
     {
