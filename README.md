@@ -16,11 +16,6 @@
 1. doxygen vendingMachine
 1. yay
 
-# how to make document (for CentOS)
-1. yum instalk doxygen
-1. doxygen vendingMachine
-1. yay
-
 # how to make document (for Windows)
 1. buy new Macintosh
 1. brew install doxygen
