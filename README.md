@@ -1,4 +1,4 @@
-# vendingmachie
+# vendingMachine
 演習用
 
 # travis-ci
