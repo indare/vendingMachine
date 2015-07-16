@@ -9,7 +9,7 @@
 namespace AcceptanceBundle;
 
 
-use VendingBundle\Entity\Coke;
+use VendingBundle\Entity\BeverageInterface;
 use VendingBundle\Machine;
 
 class ScenarioTest extends \PHPUnit_Framework_TestCase
@@ -32,8 +32,8 @@ class ScenarioTest extends \PHPUnit_Framework_TestCase
         $customerMoney = [1000, 100, 100, 50, 1];
 
         //自販機に売っているものを確認する
-        //@TODO 今は１個しかない & 実装が漏れてるのでキモい
-        /** @var Coke $stock */
+        //@TODO 今は１個しかない
+        /** @var BeverageInterface $stock */
         $stock = $this->machine->showStock()[0];
 
         $this->assertEquals('コーラ', $stock->getName());

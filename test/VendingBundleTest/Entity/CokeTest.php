@@ -1,12 +1,13 @@
 <?php
 namespace VendingBundleTest\Entity;
 
+use VendingBundle\Entity\BeverageInterface;
 use VendingBundle\Entity\Coke;
 
 class CokeTest extends \PHPUnit_Framework_TestCase
 {
 
-    /** @var Coke */
+    /** @var BeverageInterface */
     private $coke;
 
 

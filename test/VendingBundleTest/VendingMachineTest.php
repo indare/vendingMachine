@@ -2,7 +2,7 @@
 
 namespace VendingBundleTest;
 
-use VendingBundle\Entity\Coke;
+use VendingBundle\Entity\BeverageInterface;
 use VendingBundle\Machine;
 
 class VendingMachineTest extends \PHPUnit_Framework_TestCase
@@ -94,7 +94,7 @@ class VendingMachineTest extends \PHPUnit_Framework_TestCase
      */
     public function 今の在庫はコーラが５本()
     {
-        /** @var Coke $stock */
+        /** @var BeverageInterface $stock */
         $stock = $this->vendingMachine->showStock()[0];
         $this->assertEquals(120, $stock->getPrice());
         $this->assertEquals(5, $stock->getCount());

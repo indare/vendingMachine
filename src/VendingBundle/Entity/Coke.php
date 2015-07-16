@@ -1,7 +1,7 @@
 <?php
 namespace VendingBundle\Entity;
 
-class Coke
+class Coke implements BeverageInterface
 {
     private $name;
     private $price;
