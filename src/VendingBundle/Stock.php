@@ -2,8 +2,6 @@
 
 namespace VendingBundle;
 
-use VendingBundle\Entity\Coke;
-
 class Stock
 {
 
@@ -14,10 +12,11 @@ class Stock
 
     /**
      * Stock constructor.
+     * @param array $stockList
      */
-    public function __construct()
+    public function __construct(Array $stockList)
     {
-        $this->currentStock = [new Coke()];
+        $this->currentStock = $stockList;
     }
 
     /**

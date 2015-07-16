@@ -23,9 +23,9 @@ class Machine
      */
     public function __construct(Container $container)
     {
-        $this->moneyBox = $container['moneyBox'];
-        $this->validator = $container['validator'];
-        $this->stock = $container['stock'];
+        $this->moneyBox = $container['class.box'];
+        $this->validator = $container['class.validator'];
+        $this->stock = $container['class.stock'];
     }
 
     /**
