@@ -25,10 +25,10 @@ class UnitTestBaseClass extends \PHPUnit_Framework_TestCase
         $this->container['beverage.coke.count'] = 5;
 
         /** @return BoxInterface */
-        $this->container['class.box'] = function(){return new Box();};
+        $this->container['class.box'] = function($c){return new Box();};
 
         /** @return ValidatorInterface */
-        $this->container['class.validator'] = function(){return new Validator();};
+        $this->container['class.validator'] = function($c){return new Validator();};
 
         /**
          * @param Container $c

@@ -1,19 +1,20 @@
 <?php
 
-namespace CommonTestBundle;
+namespace VendingBundleTest\Money;
 
-use VendingBundle\Money\Box\Box;
+use CommonTestBundle\UnitTestBaseClass;
 use VendingBundle\Money\Box\BoxInterface;
 
-class MoneyBoxTest extends \PHPUnit_Framework_TestCase
+class MoneyBoxTest extends UnitTestBaseClass
 {
-    /** @var BoxInterface */
+    /** @var BoxInterface $box */
     private $box;
 
     /** @setup */
     public function setup()
     {
-        $this->box = new Box();
+        parent::setup();
+        $this->box = $this->container['class.box'];
     }
 
     /** @test */

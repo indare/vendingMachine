@@ -1,11 +1,12 @@
 <?php
 
-namespace CommonTestBundle;
+namespace VendingBundleTest\Money;
 
+use CommonTestBundle\UnitTestBaseClass;
 use VendingBundle\Money\Validator\Validator;
 use VendingBundle\Money\Validator\ValidatorInterface;
 
-class MoneyValidatorTest extends \PHPUnit_Framework_TestCase
+class MoneyValidatorTest extends UnitTestBaseClass
 {
 
     /**
@@ -18,7 +19,8 @@ class MoneyValidatorTest extends \PHPUnit_Framework_TestCase
      */
     public function setup()
     {
-        $this->moneyValidator = new Validator();
+        parent::setup();
+        $this->moneyValidator = $this->container['class.validator'];
     }
 
     /**
