@@ -3,9 +3,7 @@ namespace VendingBundle\Entity;
 
 class Coke implements BeverageInterface
 {
-    private $name;
-    private $price;
-    private $count;
+    use EntityBehaviorTrait;
 
     /**
      * Beverage constructor.
@@ -16,30 +14,6 @@ class Coke implements BeverageInterface
         $this->name = "コーラ";
         $this->price = "120";
         $this->count = $count;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function getCount()
-    {
-        return $this->count;
     }
 
 }
