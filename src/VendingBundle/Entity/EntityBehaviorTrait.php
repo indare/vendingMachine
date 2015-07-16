@@ -8,7 +8,6 @@
 
 namespace VendingBundle\Entity;
 
-
 trait EntityBehaviorTrait
 {
     private $price;
