@@ -3,7 +3,7 @@
 
 # travis-ci
 びるどすてーたす  
-[![Build Status](https://travis-ci.org/indare/vendingmachie.svg?branch=master)](https://travis-ci.org/indare/vendingmachie)
+[![Build Status](https://travis-ci.org/indare/vendingMachine.svg?branch=master)](https://travis-ci.org/indare/vendingMachine)
 
 # how to run test
 1. composer install
