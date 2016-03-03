@@ -6,6 +6,7 @@ interface BoxInterface
 {
     /**
      * @param int $money
+     * @return void
      */
     public function addMoney($money);
 
