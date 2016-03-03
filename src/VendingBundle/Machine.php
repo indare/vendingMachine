@@ -62,7 +62,7 @@ class Machine
             throw new \InvalidArgumentException("これはお金じゃありません。");
         }
 
-        if (!$this->validator->checkMoney($money)) {
+        if (!$this->validator->isMoney($money)) {
             return $money;
         } else {
             $this->moneyBox->addMoney($money);

@@ -8,5 +8,5 @@ interface ValidatorInterface
      * @param int $money
      * @return bool
      */
-    public function checkMoney($money);
+    public function isMoney($money);
 }

@@ -10,7 +10,7 @@ class Validator implements ValidatorInterface
     /**
      * @inheritdoc
      */
-    public function checkMoney($money)
+    public function isMoney($money)
     {
         return in_array($money, self::ACCEPTABLE_MONEY);
     }

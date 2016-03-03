@@ -32,7 +32,7 @@ class MoneyValidatorTest extends UnitTestBaseClass
     public function 投入可能なお金判定のテスト($actualMoney, $actualResult)
     {
         $moneyValidator = new Validator();
-        $result = $moneyValidator->checkMoney($actualMoney);
+        $result = $moneyValidator->isMoney($actualMoney);
         $this->assertEquals($result, $actualResult);
 
     }
