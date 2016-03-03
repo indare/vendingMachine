@@ -30,10 +30,20 @@ class Box implements BoxInterface
      */
     public function refundMoney()
     {
+
         $result = $this->amount;
-        $this->amount = 0;
+        $this->clearBox();
 
         return $result;
 
+    }
+
+
+    /**
+     * @void
+     */
+    private function clearBox()
+    {
+        $this->amount = 0;
     }
 }
