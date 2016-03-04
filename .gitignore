@@ -8,3 +8,5 @@ composer.lock
 
 doc/
 *.key
+
+clover.xml
