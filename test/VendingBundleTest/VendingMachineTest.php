@@ -2,7 +2,6 @@
 
 namespace CommonTestBundle;
 
-use VendingBundle\Entity\BeverageInterface;
 use VendingBundle\Lane;
 use VendingBundle\Machine;
 
