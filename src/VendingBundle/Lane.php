@@ -42,7 +42,7 @@ class Lane
     /**
      * @return string
      */
-    public function Name()
+    public function name()
     {
         return $this->name;
     }
@@ -50,7 +50,7 @@ class Lane
     /**
      * @return int
      */
-    public function Price()
+    public function price()
     {
         return $this->price;
     }
@@ -58,7 +58,7 @@ class Lane
     /**
      * @return int
      */
-    public function Count()
+    public function count()
     {
         return $this->count;
     }

@@ -97,9 +97,9 @@ class VendingMachineTest extends UnitTestBaseClass
     {
         /** @var Lane $stock */
         $stock = $this->vendingMachine->showStock();
-        $this->assertEquals(120, $stock->Price());
-        $this->assertEquals(5, $stock->Count());
-        $this->assertEquals('コーラ', $stock->Name());
+        $this->assertEquals(120, $stock->price());
+        $this->assertEquals(5, $stock->count());
+        $this->assertEquals('コーラ', $stock->name());
 
     }
 

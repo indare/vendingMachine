@@ -31,8 +31,8 @@ class ScenarioTest extends UnitTestBaseClass
         /** @var Lane $stock */
         $stock = $this->machine->showStock();
 
-        $this->assertEquals('コーラ', $stock->Name());
-        $this->assertEquals(120, $stock->Price());
+        $this->assertEquals('コーラ', $stock->name());
+        $this->assertEquals(120, $stock->price());
 
         //ユーザーはジュースが何個変えるかは知る必要がない。
 
