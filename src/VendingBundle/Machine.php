@@ -11,7 +11,7 @@ class Machine
 
     /** @var BoxInterface */
     private $moneyBox;
-    /** @var Stock */
+    /** @var Lane */
     private $stock;
     /** @var ValidatorInterface */
     private $validator;
@@ -24,15 +24,19 @@ class Machine
     {
         $this->moneyBox = $container['class.box'];
         $this->validator = $container['class.validator'];
-        $this->stock = $container['class.stock'];
+
+        $lane = new Lane('コーラ',120);
+        $lane->insertBeverage($container['beverage.coke.count']);
+        $this->stock = $lane;
+
     }
 
     /**
-     * @return array
+     * @return Lane
      */
     public function showStock()
     {
-        return $this->stock->getStockStatus();
+        return $this->stock;
     }
 
     /**

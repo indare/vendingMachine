@@ -3,6 +3,7 @@
 namespace AcceptanceBundle;
 
 use VendingBundle\Entity\BeverageInterface;
+use VendingBundle\Lane;
 use VendingBundle\Machine;
 use CommonTestBundle\UnitTestBaseClass;
 
@@ -28,11 +29,11 @@ class ScenarioTest extends UnitTestBaseClass
 
         //自販機に売っているものを確認する
         //@TODO 今は１個しかない
-        /** @var BeverageInterface $stock */
-        $stock = $this->machine->showStock()[0];
+        /** @var Lane $stock */
+        $stock = $this->machine->showStock();
 
-        $this->assertEquals('コーラ', $stock->getName());
-        $this->assertEquals(120, $stock->getPrice());
+        $this->assertEquals('コーラ', $stock->Name());
+        $this->assertEquals(120, $stock->Price());
 
         //ユーザーはジュースが何個変えるかは知る必要がない。
 

@@ -3,6 +3,7 @@
 namespace CommonTestBundle;
 
 use VendingBundle\Entity\BeverageInterface;
+use VendingBundle\Lane;
 use VendingBundle\Machine;
 
 class VendingMachineTest extends UnitTestBaseClass
@@ -94,11 +95,11 @@ class VendingMachineTest extends UnitTestBaseClass
      */
     public function 今の在庫はコーラが５本()
     {
-        /** @var BeverageInterface $stock */
-        $stock = $this->vendingMachine->showStock()[0];
-        $this->assertEquals(120, $stock->getPrice());
-        $this->assertEquals(5, $stock->getCount());
-        $this->assertEquals('コーラ', $stock->getName());
+        /** @var Lane $stock */
+        $stock = $this->vendingMachine->showStock();
+        $this->assertEquals(120, $stock->Price());
+        $this->assertEquals(5, $stock->Count());
+        $this->assertEquals('コーラ', $stock->Name());
 
     }
 
