@@ -11,6 +11,11 @@ use VendingBundle\Money\Validator\Validator;
 use VendingBundle\Money\Validator\ValidatorInterface;
 use VendingBundle\Stock;
 
+/**
+ * Class UnitTestBaseClass
+ * @package CommonTestBundle
+ * @codeCoverageIgnore
+ */
 class UnitTestBaseClass extends \PHPUnit_Framework_TestCase
 {
     /** @var Container $container */
@@ -36,10 +41,9 @@ class UnitTestBaseClass extends \PHPUnit_Framework_TestCase
          */
         $this->container['class.beverage.coke'] = function($c) {return new Coke($c['beverage.coke.count']);};
 
-        /**
-         * @param Container $c
-         * @return Stock
-         */
-        $this->container['class.stock'] = function($c){return new Stock([$c['class.beverage.coke']]);};
+    }
+
+    public function test()
+    {
     }
 }
