@@ -25,7 +25,7 @@ class Machine
         $this->moneyBox = $container['class.box'];
         $this->validator = $container['class.validator'];
 
-        $lane = new Lane('コーラ',120);
+        $lane = new Lane('コーラ', 120);
         $lane->insertBeverage($container['beverage.coke.count']);
         $this->stock = $lane;
 
