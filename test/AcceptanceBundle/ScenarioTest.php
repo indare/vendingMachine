@@ -9,7 +9,9 @@ use CommonTestBundle\UnitTestBaseClass;
 class ScenarioTest extends UnitTestBaseClass
 {
 
-    /** @var Machine */
+    /**
+     * @var Machine
+     */
     private $machine;
 
     /** @setup */

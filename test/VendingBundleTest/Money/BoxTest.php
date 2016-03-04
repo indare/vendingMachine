@@ -7,7 +7,9 @@ use VendingBundle\Money\Box\BoxInterface;
 
 class MoneyBoxTest extends UnitTestBaseClass
 {
-    /** @var BoxInterface $box */
+    /**
+     * @var BoxInterface
+     */
     private $box;
 
     /** @setup */

@@ -7,7 +7,10 @@ use CommonTestBundle\UnitTestBaseClass;
 
 class Step1Test extends UnitTestBaseClass
 {
-    /** @var Machine */
+
+    /**
+     * @var Machine
+     */
     private $machine;
 
     /** @setup */
@@ -27,6 +30,10 @@ class Step1Test extends UnitTestBaseClass
         $this->assertEquals($moneyType, $this->machine->receiveMoney($moneyType));
     }
 
+
+    /**
+     * @return array
+     */
     public function invalidMoneyList()
     {
         return [

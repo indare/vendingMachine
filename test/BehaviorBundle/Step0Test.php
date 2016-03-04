@@ -7,7 +7,10 @@ use CommonTestBundle\UnitTestBaseClass;
 
 class Step0Test extends UnitTestBaseClass
 {
-    /** @var Machine */
+
+    /**
+     * @var Machine
+     */
     private $machine;
 
     /** @setup */
