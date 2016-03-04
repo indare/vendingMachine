@@ -63,7 +63,7 @@ class Machine
     public function receiveMoney($money)
     {
         if (!is_int($money)) {
-            throw new \InvalidArgumentException("これはお金じゃありません。");
+            throw new \InvalidArgumentException('これはお金じゃありません。');
         }
 
         if (!$this->validator->isMoney($money)) {
